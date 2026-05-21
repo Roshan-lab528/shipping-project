@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shipping Dashboard</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: #f4f6f9;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #0d6efd, #0dcaf0);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .nav-btns a {
+            min-width: 140px;
+        }
+
+        .card {
+            border: none;
+            border-radius: 14px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .card img {
+            height: 100px;
+            object-fit: contain;
+        }
+
+        .card-body h6 {
+            font-weight: 600;
+        }
+
+        .run-btn {
+            border-radius: 20px;
+            padding: 6px 18px;
+        }
+
+        .section-title {
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container mt-4">
+
+    <!-- 🔹 Header -->
+    <div class="header mb-4">
+        <h2>🚢 Shipping Dashboard</h2>
+        <p class="mb-0">Manage Scraping & View Shipping Rates Efficiently</p>
+    </div>
+
+    <!-- 🔹 Navigation -->
+    <div class="d-flex justify-content-center gap-3 mb-4 nav-btns">
+        <a href="/" class="btn btn-success">
+            <i class="bi bi-house-door"></i> Home
+        </a>
+        
+        <a href="/rates/" class="btn btn-info text-white">
+            <i class="bi bi-bar-chart"></i> View Rates
+        </a>
+        <a href="/scraper/" class="btn btn-warning">
+            <i class="bi bi-rocket"></i> Run Scraper
+        </a>
+        <a href="/run-tracker/" class="btn btn-dark">
+            <i class="bi bi-activity"></i> Run Tracker
+        </a>
+    </div>
+
+    <!-- 🔹 Section -->
+    <h4 class="section-title">🚢 Shipping Lines</h4>
+
+    <div class="row">
+
+        <!-- Hapag -->
+        <div class="col-md-3">
+            <div class="card shadow-sm mb-4 text-center p-3">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Hapag-Lloyd_Logo.svg">
+                <div class="card-body">
+                    <h6>Hapag-Lloyd</h6>
+                    <a href="/scraper/?line=HAPAG" class="btn btn-warning btn-sm run-btn mt-2">
+                        ▶ Run Scraper
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- MSC -->
+        <div class="col-md-3">
+            <div class="card shadow-sm mb-4 text-center p-3">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/MSC_Logo.svg">
+                <div class="card-body">
+                    <h6>MSC</h6>
+                    <a href="/scraper/?line=MSC" class="btn btn-warning btn-sm run-btn mt-2">
+                        ▶ Run Scraper
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Maersk -->
+        <div class="col-md-3">
+            <div class="card shadow-sm mb-4 text-center p-3">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Maersk_Logo.svg">
+                <div class="card-body">
+                    <h6>Maersk</h6>
+                    <a href="/scraper/?line=MAERSK" class="btn btn-warning btn-sm run-btn mt-2">
+                        ▶ Run Scraper
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- CMA -->
+        <div class="col-md-3">
+            <div class="card shadow-sm mb-4 text-center p-3">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/CMA_CGM_logo.svg">
+                <div class="card-body">
+                    <h6>CMA CGM</h6>
+                    <a href="/scraper/?line=CMA%20CGM" class="btn btn-warning btn-sm run-btn mt-2">
+                        ▶ Run Scraper
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
