@@ -47,7 +47,6 @@ print("Final Container Value:", container_map.get(container_size, ""))
 cont_size=container_map.get(container_size, "")
 
 # ========= CHROME SETUP =========
-
 options = uc.ChromeOptions()
 
 options.add_argument("--headless=new")
@@ -57,8 +56,6 @@ options.add_argument("--disable-gpu")
 
 driver = uc.Chrome(
     options=options,
-    browser_executable_path="/usr/bin/chromium",
-    driver_executable_path="/usr/bin/chromedriver",
     use_subprocess=True
 )
 

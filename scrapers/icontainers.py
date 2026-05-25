@@ -55,8 +55,6 @@ options.add_argument("--disable-gpu")
 
 driver = uc.Chrome(
     options=options,
-    browser_executable_path="/usr/bin/chromium",
-    driver_executable_path="/usr/bin/chromedriver",
     use_subprocess=True
 )
 
