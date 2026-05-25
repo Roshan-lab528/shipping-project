@@ -57,19 +57,17 @@ options.add_argument("--disable-gpu")
 
 driver = uc.Chrome(
     options=options,
-    driver_executable_path="/usr/bin/chromedriver",
     use_subprocess=True
 )
-wait = WebDriverWait(driver, 30)
 
 # =========================================================
 # OPEN WEBSITE
 # =========================================================
 
 driver.get("https://my.icontainers.com/sign-in")
-
 driver.maximize_window()
 
+wait = WebDriverWait(driver, 30)
 time.sleep(10)
 
 # =========================================================
