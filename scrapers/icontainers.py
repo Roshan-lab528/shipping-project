@@ -46,9 +46,10 @@ data = []
 # =========================================================
 # CHROME SETUP
 # =========================================================
-import undetected_chromedriver as uc
-
-options = uc.ChromeOptions()
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
+options = Options()
 
 options.binary_location = "/usr/bin/chromium"
 
@@ -57,12 +58,12 @@ options.add_argument("--no-sandbox")
 options.add_argument("--disable-dev-shm-usage")
 options.add_argument("--disable-gpu")
 
-driver = uc.Chrome(
-    options=options,
-    driver_executable_path="/usr/bin/chromedriver",
-    use_subprocess=True
-)
+service = Service("/usr/bin/chromedriver")
 
+driver = webdriver.Chrome(
+    service=service,
+    options=options
+)
 # =========================================================
 # OPEN WEBSITE
 # =========================================================
