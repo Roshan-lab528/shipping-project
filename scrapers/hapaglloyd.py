@@ -38,19 +38,18 @@ records = []
 
 # ================= DRIVER =================
 options = uc.ChromeOptions()
+options.add_argument("--start-maximized")
+options.add_argument("--disable-blink-features=AutomationControlled")
+profile_path = os.path.join(BASE_DIR, "chrome", "hapag")
+options.add_argument(f"--user-data-dir={profile_path}")
 
-options.binary_location = "/usr/bin/google-chrome"
-
-options.add_argument("--headless=new")
-options.add_argument("--no-sandbox")
-options.add_argument("--disable-dev-shm-usage")
-options.add_argument("--disable-gpu")
 
 driver = uc.Chrome(
     options=options,
-    driver_executable_path="/usr/bin/chromedriver",
+    version_main=148,
     use_subprocess=True
 )
+
 # ================= OPEN SITE =================
 
 driver.get("https://www.hapag-lloyd.com/en/home.html")

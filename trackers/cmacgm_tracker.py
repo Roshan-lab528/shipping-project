@@ -15,17 +15,11 @@ warnings.filterwarnings("ignore")
 
 # -------- OPEN LOGIN PAGE --------
 options = uc.ChromeOptions()
-
-options.binary_location = "/usr/bin/google-chrome"
-
-options.add_argument("--headless=new")
-options.add_argument("--no-sandbox")
-options.add_argument("--disable-dev-shm-usage")
-options.add_argument("--disable-gpu")
-
+options.add_argument("--start-maximized")
+options.add_argument("--disable-blink-features=AutomationControlled")
 driver = uc.Chrome(
     options=options,
-    driver_executable_path="/usr/bin/chromedriver",
+    version_main=148,
     use_subprocess=True
 )
 

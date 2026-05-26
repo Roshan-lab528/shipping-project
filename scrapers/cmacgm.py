@@ -48,26 +48,14 @@ cont_size=container_map.get(container_size, "")
 
 # ========= CHROME SETUP =========
 options = uc.ChromeOptions()
-
-options.binary_location = "/usr/bin/google-chrome"
-
-options.add_argument("--headless=new")
-options.add_argument("--no-sandbox")
-options.add_argument("--disable-dev-shm-usage")
-options.add_argument("--disable-gpu")
-
-driver = uc.Chrome(
-    options=options,
-    driver_executable_path="/usr/bin/chromedriver",
-    use_subprocess=True
-)
-
-wait = WebDriverWait(driver, 20)
+options.add_argument("--start-maximized")
+options.add_argument("--disable-blink-features=AutomationControlled")
+driver = uc.Chrome(options=options, version_main=148, use_subprocess=True)
 
 # ================= OPEN WEBSITE =================
 driver.get("https://www.cma-cgm.com/")
 driver.maximize_window()
-
+wait = WebDriverWait(driver, 20)
 time.sleep(5)
 
 # ================= OPEN MY CMA =================

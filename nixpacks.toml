@@ -1,5 +1,0 @@
-[phases.setup]
-nixPkgs = ["chromium", "chromedriver"]
-
-[start]
-cmd = "gunicorn shipping_project.wsgi"

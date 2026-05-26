@@ -38,20 +38,9 @@ data = []
 # DRIVER SETUP
 # =========================================================
 options = uc.ChromeOptions()
-
-options.binary_location = "/usr/bin/google-chrome"
-
-options.add_argument("--headless=new")
-options.add_argument("--no-sandbox")
-options.add_argument("--disable-dev-shm-usage")
-options.add_argument("--disable-gpu")
-
-driver = uc.Chrome(
-    options=options,
-    driver_executable_path="/usr/bin/chromedriver",
-    use_subprocess=True
-)
-wait = WebDriverWait(driver, 30)
+options.add_argument("--start-maximized")
+options.add_argument("--disable-blink-features=AutomationControlled")
+driver = uc.Chrome(options=options, version_main=148, use_subprocess=True)
 
 # =========================================================
 # OPEN WEBSITE
@@ -59,7 +48,7 @@ wait = WebDriverWait(driver, 30)
 driver.get("https://www.mymsc.com")
 driver.maximize_window()
 time.sleep(8)
-
+wait = WebDriverWait(driver, 30)
 # =========================================================
 # ACCEPT COOKIES
 # =========================================================
